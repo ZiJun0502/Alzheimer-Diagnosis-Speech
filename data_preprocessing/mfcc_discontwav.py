@@ -29,7 +29,7 @@ window_func = np.hamming(frame_len_samples) # hamming window
 pad_data = np.append(pad_data[0],pad_data[1:]-pre_emphasis_coeff*pad_data[:-1]) # Pre-emphasis
 
 for i in range(total_frames):
-    single_frame = pad_data[i*frame_shift_samples:i*frame_shift_samples+frame_len_samples] # original frame data
+    single_frame = pad_data[i * frame_shift_samples : i * frame_shift_samples + frame_len_samples] # original frame data
     single_frame = single_frame * window_func # add window function
     frame_data[i,:] = single_frame
 
@@ -54,6 +54,7 @@ power_spec = np.absolute(freq_domain_data) ** 2 * (1/K) # power spectrum
     And formula for converting from Mel scale to frequency is:
         F(m) = 700*(10**(m/2595)-1)
 """
+
 low_frequency = 20 # We don't use start from 0 Hz because human ear is not able to perceive low frequency signal.
 high_frequency = fs//2 # if the speech is sampled at f Hz then our upper frequency is limited to 2/f Hz.
 low_frequency_mel = 2595 * np.log10(1 + low_frequency / 700)
@@ -62,6 +63,7 @@ n_filt = 40 # number of mel-filters (usually between 22-40)
 mel_points = np.linspace(low_frequency_mel, high_frequency_mel, n_filt + 2) # Make the Mel scale spacing equal.
 hz_points = (700 * (10**(mel_points / 2595) - 1)) # convert back to Hz scale.
 bins = np.floor((K + 1) * hz_points / fs) # round those frequencies to the nearest FFT bin.
+
 """Now we create our filterbanks. 
     The first filterbank will start at the first point, reach its peak at the second point, then return to zero at the 3rd point. 
     The second filterbank will start at the 2nd point, reach its max at the 3rd, then be zero at the 4th etc. 
