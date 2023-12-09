@@ -1,11 +1,19 @@
-from dotenv import load_dotenv
 from flask import Flask, request, abort
 from linebot import (LineBotApi, WebhookHandler)
 from linebot.exceptions import (InvalidSignatureError)
-from linebot.models import (MessageEvent, TextMessage, TextSendMessage,AudioMessage)
+from linebot.models import (MessageEvent, TextMessage, TextSendMessage, AudioMessage)
 import os
 import openai
 from openai import OpenAI
+import mfcc_obj
+import NLP_obj
+from datetime import datetime, timezone, timedelta
+from pydub import AudioSegment
+import sys
+import wave
+import requests
+import subprocess
+from dotenv import load_dotenv
 
 load_dotenv()
 print(os.getenv('LINE_CHANNEL_ACCESS_TOKEN'))
@@ -49,22 +57,28 @@ def handle_text_message(event):
         print("error" + str(e))
 
 
-# Text message events
+# Audio message events
 @handler.add(MessageEvent, message=AudioMessage)
 def handle_audio_message(event):
+
     user_id = event.source.user_id
-
     msg_content = line_bot_api.get_message_content(event.message.id)
-
-    file_name = user_id + '.m4a'
-    with open(file_name, 'wb') as fd:
-        for chunk in msg_content.iter_content():
-            fd.write(chunk)
 
     #reply message
     msg = "Audio message successfully received!"
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
-  
+
+    dt1 = datetime.utcnow().replace(tzinfo=timezone.utc)
+    dt2 = dt1.astimezone(timezone(timedelta(hours=8)))  # 轉換時區 -> 東八區
+    CurrTime = dt2.strftime("%Y-%m-%d_%H:%M:%S")  # 將時間轉換為 string
+
+    #create m4a file
+    file_name = CurrTime + '.m4a'
+
+    with open(file_name, 'wb') as fd:
+        for chunk in msg_content.iter_content():
+            fd.write(chunk)
+
     try:
         openai.api_key = os.environ['OPENAI_API_KEY']
 
@@ -85,13 +99,32 @@ def handle_audio_message(event):
         exit(1)
 
     client = OpenAI()
-        audio_file = open(file_name, "rb")
-        transcript = client.audio.transcriptions.create(
-        model="whisper-1", 
-        file=audio_file
-    )
+
+    #open m4a file
+    m4a_file = open(file_name, "rb")
+    transcript = client.audio.transcriptions.create(model="whisper-1",
+                                                  file=m4a_file,
+                                                  response_format="text")
     print("successfully generate transcript!")
-    print(transcript)
+
+    path = 'output.txt'
+    f = open(path, 'w')
+    f.write(transcript)
+    f.close()
+
+    #implement NLP
+    NLP = NLP_features(path)
+    NLP.generate_features()
+    print(NLP.feature_table)
+
+    wav_filename = 'output.wav'
+    sound = AudioSegment.from_file(file_name, format='m4a')
+    sound.export(wav_filename, format='wav')
+
+    #implement MFCC
+    MFCC = mfcc_obj.mfcc_features(wav_filename)
+    MFCC.mfcc_feature_calculation()
+    MFCC.mfcc_output("testdoc")
 
 
 @app.route("/", methods=['GET'])

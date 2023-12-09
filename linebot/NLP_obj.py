@@ -245,11 +245,12 @@ class NLP_features():
         self.feature_table[56] /= self.words
     
 if __name__ == "__main__":
-    file_path = '/Users/raychang/Desktop/NTHU Courses/Machine Learning/final_project/Alzheimer-Diagnosis-Speech/linebot/AdamSavage_2008P.txt'
+    file_path = 'AdamSavage_2008P.txt'
     NLP = NLP_features(file_path)
     NLP.generate_features()
     print(NLP.feature_table)
 
+# will be single row output for a single txt input
 # Sample output:
 # [6.37000000e+02 1.00000000e+00 2.90000000e+01 7.60000000e+01
 #  6.40000000e+01 7.60000000e+01 1.29000000e+02 2.90000000e+01
