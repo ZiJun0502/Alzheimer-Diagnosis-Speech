@@ -3,7 +3,7 @@ import csv
 from scipy.io import wavfile
 from scipy.fftpack import dct
 import os
-import panda as pd
+import pandas as pd
 
 ### Messages for Daphne:
 ### 1. All file handlers are named as "file_handler", change it according to the feed from the audio messages generated from line.
