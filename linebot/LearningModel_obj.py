@@ -96,11 +96,7 @@ def predict(x, y_true, model):
     
     
 if __name__ == "__main__":
-
-#     whole_dataset = "/content/drive/MyDrive/term project/final_training_data/merged_data.csv"
-#     normalized_dataset = "/content/drive/MyDrive/term project/final_training_data/normalized_merged_data.csv"
-#     MCI_dataset = "/content/drive/MyDrive/term project/final_training_data/MCI_data.csv"
-
+    
     MCI_AD = "MCI_patient.csv"
 
     training_df = pd.read_csv(MCI_AD)
