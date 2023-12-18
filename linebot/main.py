@@ -158,16 +158,23 @@ def home():
 
   reply_arr = []
   # user_ids = line_bot_api.get_friend_ids()
-  Init_msg = "hi there! I'm AD diagnoser! Welcome to start trial with me!\n You can start with telling a strory with the picture below to start the diagnosing process"
-  # img_URL = "https://www.google.com/url?sa=i&url=https%3A%2F%2Frebecca1812.pixnet.net%2Fblog%2Fpost%2F68894631-%255B%25E7%25B7%25B4%25E5%25AF%25AB%25E4%25BD%259C%2526%25E6%258F%2590%25E5%258D%2587%25E5%258F%25A3%25E8%25AA%25AA%255D-%25E7%259C%258B%25E5%259C%2596%25E8%25AA%25AA%25E6%2595%2585%25E4%25BA%258B3&psig=AOvVaw164L82xXG9KKTOxEU4qFaU&ust=1702483684452000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPjPlo2kioMDFQAAAAAdAAAAABAD"
+  Init_msg = "hi there! I'm AD diagnoser! Welcome to start trial with me!You can start with telling a story with the picture below to start the diagnosing process!"
+  
+  img_URL = "https://i.imgur.com/U8ssZ3a.jpg"
   text_message = TextSendMessage(text=Init_msg)
   reply_arr.append(text_message)
 
+  # image_message = ImageSendMessage(
+  #     original_content_url=
+  #     'https://ithelp.ithome.com.tw/storage/image/ironman13thsidebar.png',
+  #     preview_image_url=
+  #     'https://ithelp.ithome.com.tw/storage/image/ironman13thsidebar.png')
+  # reply_arr.append(image_message)
+
   image_message = ImageSendMessage(
-      original_content_url=
-      'https://ithelp.ithome.com.tw/storage/image/ironman13thsidebar.png',
-      preview_image_url=
-      'https://ithelp.ithome.com.tw/storage/image/ironman13thsidebar.png')
+      original_content_url = img_URL,
+      preview_image_url = img_URL
+      )
   reply_arr.append(image_message)
 
   # for user_id in user_ids:
