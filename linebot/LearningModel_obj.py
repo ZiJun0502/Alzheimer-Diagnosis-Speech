@@ -94,7 +94,6 @@ def predict(x, y_true, model):
     print('- MCC: %s' % mcc)
     print('- F1 score: %s' % f1)
     
-    
 if __name__ == "__main__":
     
     MCI_AD = "MCI_patient.csv"
