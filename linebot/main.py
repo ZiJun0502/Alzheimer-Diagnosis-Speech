@@ -16,9 +16,6 @@ import mfcc_obj
 import NLP_obj
 import subprocess
 
-cloud_convert_api = os.environ.get('CLOUD_CONVERT_API')
-cloudconvert.configure(api_key = 'API_KEY', sandbox = False)
-
 load_dotenv()
 print(os.getenv('LINE_CHANNEL_ACCESS_TOKEN'))
 print(os.getenv('LINE_CHANNEL_SECRET'))
