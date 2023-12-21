@@ -1,0 +1,28 @@
+line-bot-sdk
+python-dotenv
+Flask
+gunicorn
+numpy
+pandas
+python-csv
+openai
+python-dotenv
+pydub
+scipy
+nltk
+spacy
+nomkl
+negspacy
+subprocess.run
+scikit-learn
+# sklearn.model_selection
+# sklearn.neighbors
+# sklearn.ensemble
+# sklearn.svm
+# sklearn.tree
+# sklearn.neural_network
+# sklearn.ensemble
+# sklearn.linear_model
+# sklearn.preprocessing
+# sklearn.pipeline
+# sklearn.metrics

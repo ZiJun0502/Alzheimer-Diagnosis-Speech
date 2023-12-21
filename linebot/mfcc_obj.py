@@ -3,7 +3,7 @@ import csv
 from scipy.io import wavfile
 from scipy.fftpack import dct
 import os
-import panda as pd
+import pandas as pd
 
 ### Messages for Daphne:
 ### 1. All file handlers are named as "file_handler", change it according to the feed from the audio messages generated from line.
@@ -62,7 +62,7 @@ class mfcc_features():
         self.mfcc = dct(log_fbank, type=2, axis=1, norm="ortho")[:, 1 : (self.num_ceps + 1)] 
 
     def mfcc_output(self, idx_wav):
-        file_handler = f'./{idx_wav}.csv'
+        file_handler = f'{idx_wav}.csv'
         with open(file_handler, 'w', newline='') as csvfile:
             csv_writer = csv.writer(csvfile)
             # Write data to the CSV file

@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[2]:
-
-
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -33,13 +27,13 @@ class Model():
     
     def BaseLearner(self):
         
-        """initializa all base learners"""
+        """initialize all base learners"""
         
         X_train = self.X_train
         Y_train = self.Y_train
         
         #init KNN classifier
-        self.knn = KNeighborsClassifier(5) # Define classifier
+        self.knn = KNeighborsClassifier(3) # Define classifier
         self.knn.fit(X_train, Y_train) # Train model
         
         #init SVM classifier
@@ -77,7 +71,8 @@ class Model():
 
         # Train stacked model
         self.stack_model.fit(self.X_train, self.Y_train)
-    
+
+
 def predict(x, y_true, model):
     
     """make prediction and calculate accuracy"""
@@ -153,9 +148,6 @@ if __name__ == "__main__":
     print('Model performance for stack model classifier:')
     predict(X_val, y_val, model.stack_model)
     
-
-
-# In[ ]:
 
 
 
