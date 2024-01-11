@@ -8,11 +8,12 @@ The file is composed of the calling of the wav file in the drive-way, then trans
 ### Approach
 ![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/55a60af3-146c-4e29-814c-94237eba2d62)
 A Transformer sequence-to-sequence model is trained on various speech processing tasks, including multilingual speech recognition, speech translation, spoken language identification, and voice activity detection. These tasks are jointly represented as a sequence of tokens to be predicted by the decoder, allowing a single model to replace many stages of a traditional speech-processing pipeline. The multitask training format uses a set of special tokens that serve as task specifiers or classification targets.
-### Module 
+
+### Language Module 
 There are five model sizes, four with English-only versions, offering speed and accuracy tradeoffs.
 <img width="608" alt="image" src="https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/ab9b853c-6d6d-4d2b-a29b-854bc6cf6681">
 
-We'll choose the base module in this case because a smaller module will cause translation errors, a bigger module will cause huge running time, and we don't need so much multilanguage.
+We chose the base module in this case because a smaller module will cause translation errors, a bigger module will cause huge running time, and we don't need so much multilanguage.
 ### Accuracy
 The fallowing is the accuracy in different language
 ![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/4f081855-480f-4263-8532-cb81ee2947a8)
@@ -20,9 +21,9 @@ The fallowing is the accuracy in different language
 In the implementation of ASR transformation, English transform is well transformed, but Chinese has almost the wrong answer as we hear.We have done the research on Chinese ASR; the Central Research Academy in Taiwan has some research on it; and NTHU in China as well, but their method only has about 70% accuracy in the transform result.
 So, I think if we want to do research on Chinese audio classification, the text part will be stuck on the ASR part.
 ### Why we choose Whisper
-1. Reliability
-2. Easy to use in their API
-3. Multilanguage support
+(1) Reliability
+(2) Easy to use in their function call
+(3) Multilanguage support
 ### The disadvantage of Whisper
 Because Whisper is a sequence-to-sequence module, the average running time will be huge.
 On the other hand, Whisper is only supported in CPU computation and programming in the Python language, both of which slow the processing time while you execute it. Therefore, the version proposed to speed up processing starts appearing.
@@ -34,9 +35,10 @@ Because linebots can use GPUs,  we can't use the modified version of whisper. I
 ### The blurry words in patient data
 The first question we will ask is whether all of the blurry words spoken by the patient will be translated; if the words are being translated to a proper word, then we can't recognize the blurry words in the natural language process.
 The answer is that Whisper will translate the blurry word into a comma, or emm, but there isn't a constant form for these blurry words, so it's the barrier to recognizing the specific term for punction in nature language processing.
+### 
 
 2.`ASR result`:
-The text result will be store in this folder, we can take a simple look about transform
+The text result will be store in this folder, we can take a simple look about transform, we can simply see that Chinese ASR text file has several mistakes, English ASR transform result has some utf-8 code(maybe blurry words), will cause error on NLP.
 
 3.`missing_asr.ipynb`:
 Because some of the entries have poor performance on the NLP (ex: empty, extremely high value), we'll specifically pick out the entries and rerun the ASR for them.
