@@ -30,6 +30,6 @@ _3. LineBot LINE_CHANNEL_SECRET_
 ## User Manual  
 _1. Adding AD diagnoser as your friend_  
 
-_2. Sending an audio message of a 30sec~1min speech to AD diagnoser(could  be either a description of a picture, or any monologue in English _  
+_2. Sending an audio message of a 30sec~1min speech to AD diagnoser(could  be either a description of a picture, or any monologue in English_  
 
 _3. Waiting for response_
