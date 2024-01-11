@@ -1,4 +1,4 @@
-##Directory Description  
+## Directory Description  
 main.py: Linebot interface  
 mfcc_obj.py: MFCC data preprocess module  
 NLP_obj.py: turn transcript into NLP analyze result  
