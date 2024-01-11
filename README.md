@@ -36,4 +36,4 @@ _3. Waiting for response_
 
 ![image](https://imgur.com/Br1cRps)
 ![image](https://imgur.com/M08Eg7T)
-![image](https://imgur.com/C5Onfz2)
+![image](https://i.imgur.com/C5Onfz2.png)
