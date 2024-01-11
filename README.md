@@ -34,6 +34,6 @@ _2. Sending an audio message of a 30sec~1min speech to AD diagnoser(could  be ei
 
 _3. Waiting for response_
 
-![image](https://imgur.com/Br1cRps)
-![image](https://imgur.com/M08Eg7T)
+![image](https://i.imgur.com/Br1cRps.png)
+![image](https://i.imgur.com/M08Eg7T.png)
 ![image](https://i.imgur.com/C5Onfz2.png)
