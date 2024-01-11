@@ -29,6 +29,7 @@ Because Whisper is a sequence-to-sequence module, the average running time will 
 On the other hand, Whisper is only supported in CPU computation and programming in the Python language, both of which slow the processing time while you execute it. Therefore, the version proposed to speed up processing starts appearing.
 ### Faster version of Whisper
 [High-performance GPGPU inference of OpenAI's Whisper automatic speech recognition (ASR) model](https://github.com/Const-me/Whisper)
+
 Using cpython instead of python can run on a Nvidia GPU; the faster modification version to use Whisper.
 ### The method we used in our Line bot
 Because linebots can use GPUs,  we can't use the modified version of whisper. It will be extremely slow for us to run a minute of audio to have the classify result, so we directly call the API from Open-AI.
