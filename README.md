@@ -6,22 +6,22 @@ This Brench is created for linebot implementation
 
 Mainly in file "Linebot", Which includes:  
 
-***1. Linebot interface***  
+_1. Linebot interface_  
 
-***2. Data preprocess maintained as a class***  
+_2. Data preprocess maintained as a class_  
 
-***3. Model training process maintained as a class***  
+_3. Model training process maintained as a class_  
 
-***4. Side materials for testing***
+_4. Side materials for testing_
 
 ##  Build Setup  
 
-***1. Replit***  
-***2. Google Run***  
+_1. Replit_  
+
+_2. Google Run_  
 
 ## .env Setting  
-***1. OpenAI token***  
-***2. LineBot LINE_CHANNEL_ACCESS_TOKEN***  
-***3. LineBot LINE_CHANNEL_SECRET***  
-See .env for more 
+_1. OpenAI token_  
+_2. LineBot LINE_CHANNEL_ACCESS_TOKEN_  
+_3. LineBot LINE_CHANNEL_SECRET_  
 
