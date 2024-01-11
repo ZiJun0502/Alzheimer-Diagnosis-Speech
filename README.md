@@ -33,3 +33,7 @@ _1. Adding AD diagnoser as your friend_
 _2. Sending an audio message of a 30sec~1min speech to AD diagnoser(could  be either a description of a picture, or any monologue in English_  
 
 _3. Waiting for response_
+
+![image](https://imgur.com/Br1cRps)
+![image](https://imgur.com/M08Eg7T)
+![image](https://imgur.com/C5Onfz2)
