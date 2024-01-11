@@ -22,6 +22,9 @@ _2. Google Run_
 
 ## .env Setting  
 _1. OpenAI token_  
-_2. LineBot LINE_CHANNEL_ACCESS_TOKEN_  
+
+_2. LineBot LINE_CHANNEL_ACCESS_TOKEN_ 
+
 _3. LineBot LINE_CHANNEL_SECRET_  
+
 
