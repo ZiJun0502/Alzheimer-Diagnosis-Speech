@@ -34,8 +34,10 @@ Because linebots can use GPUs,  we can't use the modified version of whisper. I
 ### The blurry words in patient data
 The first question we will ask is whether all of the blurry words spoken by the patient will be translated; if the words are being translated to a proper word, then we can't recognize the blurry words in the natural language process.
 The answer is that Whisper will translate the blurry word into a comma, or emm, but there isn't a constant form for these blurry words, so it's the barrier to recognizing the specific term for punction in nature language processing.
+
 2.`ASR result`:
 The text result will be store in this folder, we can take a simple look about transform
+
 3.`missing_asr.ipynb`:
 Because some of the entries have poor performance on the NLP (ex: empty, extremely high value), we'll specifically pick out the entries and rerun the ASR for them.
 
