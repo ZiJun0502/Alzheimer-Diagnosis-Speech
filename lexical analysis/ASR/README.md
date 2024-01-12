@@ -1,4 +1,4 @@
-## ASR segment of the project:The bridge from audio to lexical analysis
+## ASR segment of the project: The bridge from audio to lexical analysis
 ### There are three parts of the ASR process
 
 1.`Whisper.ipynb`
