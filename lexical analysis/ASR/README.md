@@ -1,7 +1,6 @@
-## ASR segment of the project
-![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/d60718b9-db20-4232-937b-2af7370aaed4)
+## ASR segment of the project:The bridge from audio to lexical analysis
+### There are three parts of the ASR process
 
-### The segment is composed of three part of coding
 1.`Whisper.ipynb`
 ### Overview
 The file is composed of the calling of the wav file in the drive-way, then transformed by the sequence-to-sequence module developed by Open-AI. We only take the text segments of the transformation result and save it as a txt file.
@@ -57,4 +56,8 @@ The text result will be store in this folder, we can take a simple look about tr
 
 3.`missing_asr.ipynb`:
 Because some of the entries have poor performance on the NLP (ex: empty, extremely high value), we'll specifically pick out the entries and rerun the ASR for them.
+The fallowing figure is the extremely high value in the dataset, we'll need to double check tje accuracy of the ASR result.
+
+![螢幕擷取畫面 2024-01-12 112617](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/44d9afc0-b3dd-452b-a32b-82b21a5eb568)
+
 
