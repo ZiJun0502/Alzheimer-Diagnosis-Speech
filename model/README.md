@@ -1,7 +1,5 @@
 # Alzheimer's Disease Prediction Model Using MFCC and NLP Features
 
-# Alzheimer's Disease Prediction Models: Comprehensive Guide
-
 ## Overview
 This comprehensive guide covers three Alzheimer's Disease (AD) prediction models, focusing on machine learning techniques, MFCC data extraction, and a combination of MFCC and NLP features. These models aim to predict AD using various classifiers and data sources, including patient and normal datasets.
 
