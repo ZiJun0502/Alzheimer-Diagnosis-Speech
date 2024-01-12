@@ -21,6 +21,7 @@ import mfcc_obj
 import NLP_obj
 import Mergeinput
 import LearningModel_obj
+from dotenv import load_dotenv
 
 load_dotenv()
 print("access token", os.getenv('LINE_CHANNEL_ACCESS_TOKEN'))
@@ -170,8 +171,6 @@ def handle_audio_message(event):
     line_bot_api.reply_message(event.reply_token, reply_arr)
 
 
-
-
 @app.route("/", methods=['GET'])
 def home():
 
@@ -182,13 +181,6 @@ def home():
   img_URL = "https://i.imgur.com/U8ssZ3a.jpg"
   text_message = TextSendMessage(text=Init_msg)
   reply_arr.append(text_message)
-
-  # image_message = ImageSendMessage(
-  #     original_content_url=
-  #     'https://ithelp.ithome.com.tw/storage/image/ironman13thsidebar.png',
-  #     preview_image_url=
-  #     'https://ithelp.ithome.com.tw/storage/image/ironman13thsidebar.png')
-  # reply_arr.append(image_message)
 
   image_message = ImageSendMessage(original_content_url=img_URL,
                                    preview_image_url=img_URL)
@@ -201,7 +193,6 @@ def home():
   #       ImageSendMessage(original_content_url=img_URL,
   #                        preview_image_url=img_URL))
   line_bot_api.push_message("Ub1e82ffd0b71b067b7196330dcff2aee", reply_arr)
-
 
   #pretrain model
   MCI_AD = "./MCI_patient.csv"
