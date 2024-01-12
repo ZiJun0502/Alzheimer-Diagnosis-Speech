@@ -1,78 +1,48 @@
-# Machine Learning Model for Alzheimer's Disease Prediction
+# Alzheimer's Disease Prediction Model Using MFCC and NLP Features
+
+# Alzheimer's Disease Prediction Models: Comprehensive Guide
 
 ## Overview
-This machine learning model is designed to predict Alzheimer's Disease (AD) using various classifiers. The model is trained on a dataset consisting of AD patients, MCI (Mild Cognitive Impairment) patients, and healthy individuals. The classifiers used include K-Nearest Neighbors, Support Vector Machine, Decision Tree, Random Forest, Neural Network, and a Stacked Model combining these classifiers.
+This comprehensive guide covers three Alzheimer's Disease (AD) prediction models, focusing on machine learning techniques, MFCC data extraction, and a combination of MFCC and NLP features. These models aim to predict AD using various classifiers and data sources, including patient and normal datasets.
 
 ## Requirements
 - Python 3.x
-- Libraries: pandas, numpy, sklearn, matplotlib
+- Libraries: pandas, numpy, sklearn, matplotlib, csv
+- Google Colab for drive mounting and processing
 
 ## Installation
-Ensure that Python 3 and the required libraries are installed. You can install the libraries using pip:
-```
-pip install pandas numpy sklearn matplotlib
-```
+1. Install Python 3 and required libraries using pip.
+2. Use Google Colab for executing scripts and accessing Google Drive.
 
 ## Usage
-### Step 1: Connect to Google Drive
-Mount your Google Drive to access the datasets.
-```python
-from google.colab import drive
-drive.mount('/content/drive/')
-```
+### Common Steps for All Models
+- **Connect to Google Drive**: Use Google Colab to mount your Google Drive for data access.
+- **Import Required Packages**: Import Python packages like pandas, numpy, sklearn, os, etc.
 
-### Step 2: Import Packages
-Import all the necessary packages.
-```python
-import pandas as pd
-import numpy as np
-...
-import matplotlib.pyplot as plt
-```
+### Model-Specific Steps
+#### 1. Machine Learning Model for AD Prediction
+- **Data Preparation**: Load the dataset from Google Drive and split it into training and test sets.
+- **Feature Selection using Lasso**: Perform feature selection using Lasso regression.
+- **Model Training and Evaluation**: Train models like KNN, SVM, Decision Tree, etc., and evaluate using metrics like accuracy, MCC, and F1-score.
+- **Results Visualization**: Visualize model performance.
 
-### Step 3: Load and Prepare the Dataset
-Load the dataset from your file path and split it into training and test sets.
-```python
-# Paths to datasets
-whole_dataset = ""
-...
+#### 2. MFCC Data Extraction Model
+- **Data Processing**: Initialize a data processing class for extracting MFCC features.
+- **MFCC Feature Extraction**: Process patient datasets to extract MFCC features such as mean, standard deviation, etc.
 
-# Load and prepare the dataset
-training_df = pd.read_csv(MCI_AD)
-X = training_df.drop(['name', 'AD_diagnose'], axis=1)
-y = training_df['AD_diagnose']
-X_train, X_test, y_train, y_test = train_test_split(X, y, train_size = 0.8, random_state=20)
-```
+#### 3. Combined MFCC and NLP Features Model
+- **Data Preparation**: Load the dataset from Google Drive and split it into training and test sets.
+- **Merge MFCC and Text Data**: Combine MFCC data with NLP textual data and assign AD diagnosis labels.
+- **Normalize the Final Dataset**: Merge datasets and normalize by dropping non-normalized features.
 
-### Step 4: Feature Selection using Lasso
-Perform feature selection using Lasso regression.
-```python
-lasso_model = Lasso(alpha=0.005)
-...
-```
-
-### Step 5: Model Training and Evaluation
-Train and evaluate different models: KNN, SVM, Decision Tree, Random Forest, Neural Network, and Stacked Model. Each model's performance is evaluated using accuracy, MCC, and F1-score metrics.
-```python
-# K nearest neighbors
-knn = KNeighborsClassifier(10)
-...
-```
-
-### Step 6: Results Visualization
-Visualize the performance of each model.
-```python
-df.plot(kind = "line")
-```
+### Final Dataset Creation and Saving
+- **Create DataFrames and Merge Data**: For all models, create separate DataFrames for different features and merge them.
+- **Save Processed Data to CSV**: Export the processed data to CSV files for further analysis.
 
 ## Data
-Ensure that the datasets are correctly placed in your Google Drive. The datasets required are:
-- Merged data
-- Normalized merged data
-- MCI data
-- MCI patient data
-- Modified result data
+- Ensure data files like patient datasets, MFCC feature files, and NLP textual data files are correctly placed in Google Drive.
+- Follow specific file paths mentioned in the models' scripts.
 
 ## Note
-- This model is developed for educational and research purposes.
-- The performance of the model can vary based on the quality and size of the dataset used.
+- These models are developed for educational and research purposes.
+- The performance of the models can vary based on dataset quality and size.
