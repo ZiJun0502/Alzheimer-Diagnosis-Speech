@@ -105,9 +105,29 @@ When we listen to the patient's audio, we can observe that the patient won't hav
 
 Then, we will ask whether the words AD patients use are familiar to them in their daily lives. So, we use SUBTL frequency norms, which collect the daily term in drama and video clips. We can average each word in the text to get the degree of familiarity easily.
 
-### 
+### Syntactic complexity
 
-​
+Including Yngve Depth, left-branching depth, Frazer Depth, and Syntactic Dependency Length (SDL) scores, three-part advanced analysis using a parser tree developed by Stanford NLP.
+Yngve Depth is named after American linguist Kenneth Yngve. We need to use a parser tree to identify embedded structures, define the depth of each embedded structure, and sum all of the depths up. And the left-branching tree is the theory based on Yngve depth; we can also calculate it with a parser tree.
+Frazer depth, which is similar to Yngve depth, It is named after American linguist Michael Frazer; it identifies and counts the number of subordinate clauses in the sentence.
+Syntactic Dependency Length (SDL) is a measure of sentence complexity as well, but it is different from the above two methods. It's first performing dependency parsing with the sentence, calculating the syntactic dependency length, the difference between head words and dependency words, and giving an average on all of the syntactic dependency.
+We are finally using the basic implements in syntactic complexity, dependency tree, and parser tree. We simply calculate the mean, average, and maximum height of these two trees.
+
+![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/b4ac49a9-dcf8-453b-b4ee-02d498155879)
+
+![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/54e8b8f3-db51-4e2a-b482-c29d0d1a3b2e)
+
+### Repetitiveness
+
+Repeatness is an important issue in AD patient diagnosis as well. In the first place, we don't find a good way to extract this feature because the differences between the sentences can't be measured by the words or the lemma. However, we have discovered the Bag-of-Words Model (BoW) module and recognized its similarity to different words.
+
+![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/49cd9384-f554-4e2d-9917-000441c86ce3)
+
+We can give a brief description in a bag of words using Sk-Learn and NLTK to do the document vectorization, calculating the cosine distance between each sentence, and forming the difference matrix. We will set a threshold; if the distance is below the threshold, we'll assume the two sentences are the same. So, we can calculate the proportion of repeatness in the text.
+
+![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/258c915f-7543-4375-9885-68b07d2d7f40)
+
+
  
 
 
