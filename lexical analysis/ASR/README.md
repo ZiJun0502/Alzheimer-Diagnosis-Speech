@@ -20,6 +20,22 @@ The developed group has done specific optimal processing on the non-English tran
 ![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/69648582-6180-49a2-9456-8f4c289e006f)
 
 Its training process is on the right, mainly sequence-to-sequence learning. The sequence-to-sequence model is a general term for a type of technology that converts sequences into sequences. Regarding sequence-to-sequence, it is mainly composed of two RNNs: encoder and decoder. You can imagine that encoding is equivalent to processing input data. We feed it data and denoise it through feature engineering (or attention, or image compression processing, etc.), and then output through the decoder.
+
+We can simply think that the sentence transformation depends on the previous words in the text, so if we have the sequence node to transform the sentence by the position it is in, we can perfectly solve the problem. Below is a RNN module built into a sequence transform:
+
+![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/d620fd13-145e-4666-b50b-e0a4766b2654)
+
+
+But there is a problem that occurs with the RNN sequence module: if we want to transform the sentence into more words than input, we need to build another RNN sequence module to transform the output into a longer sentence. The first module will be named encoder; it encodes the sentence into the feature vector, and another RNN module reconstructs the feature vector by decoding. The module is as below:
+
+![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/2198e01e-2d2f-4215-9e4f-02dc658a16ba)
+
+
+We can think of the process as the PCA process we did in Project 4. First,  we reduced the dimension into a dimension input and used the dimension extract to reconstruct the original data.
+
+![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/12511923-2cd9-4638-ab8a-16a51e0bc156)
+
+
 ### Language Module 
 There are five model sizes, four with English-only versions, offering speed and accuracy tradeoffs.
 <img width="608" alt="image" src="https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/ab9b853c-6d6d-4d2b-a29b-854bc6cf6681">
@@ -27,6 +43,7 @@ There are five model sizes, four with English-only versions, offering speed and 
 We chose the base module in this case because a smaller module will cause translation errors, a bigger module will cause huge running time, and we don't need so much multilanguage.
 ### Accuracy
 The fallowing is the accuracy in different language
+
 ![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/4f081855-480f-4263-8532-cb81ee2947a8)
 
 ![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/c1f6ad52-39ae-418e-b928-19c6b6883c5d)
