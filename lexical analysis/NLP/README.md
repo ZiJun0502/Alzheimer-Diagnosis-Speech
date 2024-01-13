@@ -21,5 +21,4 @@ As for chunks, clauses, or t-units, they are the basic components in sentences t
 We have the prediction that the syntactic complexity will decrease in number in AD patients because of a leak of language-speaking memory.
 
 ### Vocabulary richness
-Including type-token ratio, movingaverage type-token ratio, Brunet’s index, and Honore’s ´
-statistic.
+Including type-token ratio, movingaverage type-token ratio, Brunet’s index, and Honore’s statistic.
