@@ -127,6 +127,14 @@ We can give a brief description in a bag of words. We uses Sk-Learn and NLTK to 
 
 ![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/258c915f-7543-4375-9885-68b07d2d7f40)
 
+### Silence splitting
+
+`get_silent.py`
+
+The silence pause splitting is an important issue in AD diagnosis. We can use a similar idea in noise reduction using the Pydub library and set a threshold in amplitude and the length of the silence segment. If the silence segment fits the threshold we set, we will split it out.
+
+![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/709a7e73-e0a2-4ee5-ac93-803bab56024d)
+
 ## Final result
 `LearningModel_lasso_lexical.ipynb`
 
