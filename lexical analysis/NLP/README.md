@@ -134,6 +134,9 @@ We select the lexical analysis features and training module on it. We can observ
 
 ![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/6f6662f2-0d14-4dc4-9900-11c77467abef)
 
-So, we implement the lasso dimension reduce, and selecting 
+So, we implement the lasso dimension reduction and select the features that affect the results the most. We can speculate that syntactic complexity didn't work as well as we thought before. The reason behind this, I think, is that the daily speech didn't have a very complex syntactic structure. The final lexical result will be as below:
 
+![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/56293815-5f91-43f5-bf26-56a4b41ab26c)
+
+It has higher accuracy, f1 score, and MCC scores, even as high as the fused result in the below context.
 
