@@ -130,10 +130,10 @@ We can give a brief description in a bag of words. We uses Sk-Learn and NLTK to 
 ## Final result
 `LearningModel_lasso_lexical.ipynb`
 
-We select the lexical analysis features and training module on it. We can observe that if we put all of the features in the module, it'll have poorer performance in accuracy, about 0.7, and a f1 score of 0.67, so the dimension reduction is crucial for the training datasets.
+We select the lexical analysis features and training module on it. We can observe that if we put all of the features in the module, it'll have poorer performance in accuracy (about 0.7), a f1 score of 0.67, and very poor performance on the MCC value (about 0.2), so the dimension reduction is crucial for the training datasets.
 
 ![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/6f6662f2-0d14-4dc4-9900-11c77467abef)
 
-
+So, we implement the lasso dimension reduce, and selecting 
 
 
