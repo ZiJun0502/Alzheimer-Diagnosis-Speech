@@ -4,12 +4,12 @@ I will discuss the feature we extract, and discuss the method we use in coding p
 The main engines we used in this project composed of three parts:
 ### Spacy
 
-![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/f56c78bb-9e63-444b-9a45-95e7361326f6)
+![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/0dc123af-7be8-4441-a92b-0b91769deee2)
 
 A scientific engine built on Python has the advantages of easy-to-use function calls, an extensive support library based on it, and the speed of a natural language process, but it also has disadvantages in terms of lacking professional skills in parser trees or more advanced NLP skills.
 ### NLTK
 
-![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/4dd44305-5f44-4ae3-b85a-414437e75ffc)
+![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/7717a190-0384-4878-8838-c56b79b62d79)
 
 With the NLTK library, we can use it to analyze more advanced lexical features with the Sk-Learn library, like the bag of words module and the basic parser tree module.
 
@@ -21,7 +21,8 @@ Stanford NLP, developed by Stanford University. It is built on a server, we can 
 
 ### Stanza
 
-![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/04dd3acd-6cce-4a28-813b-4e976f4719d4)
+![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/e89dfd5b-e9a3-4daa-b126-82b3776e8e34)
+
 
 Stanza Library is the optimal version of Stanford NLP; it can simply use pip to install and execute, adding up to a more extensible package,so we usually use stanzas to analyze more advanced features because of their convenience.
 
