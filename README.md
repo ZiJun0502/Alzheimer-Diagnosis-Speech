@@ -6,7 +6,7 @@ We use the dataset used in the competition and the tags on it to classify the MC
 We use the dataset composed of Ted Talks in 2012. The reason we chose it is because of the fluency of the speaker's speech and the length of the speech, which is suitable for the patient dataset.
 
 ## Acoustical Analysis
-### [MFCC]
+### MFCC
 This Python script processes a collection of WAV files in the 'wav' directory to extract Mel Frequency Cepstral Coefficients (MFCCs). The script follows the standard procedure for MFCC extraction:
 1. Frame the Signal
 2. Calculate Power Spectrum
@@ -26,7 +26,7 @@ pip install numpy scipy
 ```
 Feel free to customize the script based on your specific needs. Adjust frame length, frame shift, and other parameters as necessary.
 
-### [Praat]
+### Praat
 This Python script utilizes the Parselmouth library to extract various acoustic features from a collection of WAV files in the 'patient_wav' directory. The extracted features include intensity, pitch, harmonics-to-noise ratio (HNR), glottal-to-noise ratio (GNE), local jitter, local shimmer, spectrum attributes, and formant attributes.
 
 ## Usage
