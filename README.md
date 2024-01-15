@@ -5,7 +5,45 @@ We use the dataset used in the competition and the tags on it to classify the MC
 ### [TED-LIUM release1](https://huggingface.co/datasets/LIUM/tedlium)
 We use the dataset composed of Ted Talks in 2012. The reason we chose it is because of the fluency of the speaker's speech and the length of the speech, which is suitable for the patient dataset.
 
+## Acoustical Analysis
+### [MFCC]
+This Python script processes a collection of WAV files in the 'wav' directory to extract Mel Frequency Cepstral Coefficients (MFCCs). The script follows the standard procedure for MFCC extraction:
+1. Frame the Signal
+2. Calculate Power Spectrum
+3. Apply Mel Filterbank
+4. Logarithm of Filterbank Energies
+5. Discrete Cosine Transform (DCT)
+6. Extract MFCCs
+
+## Usage
+1. Place your WAV files in the 'wav' directory.
+2. Run the script to extract MFCC features from each WAV file.
+3. CSV files with extracted MFCC features will be generated for each corresponding WAV file.
+
+## Installation
+```bash
+pip install numpy scipy
+```
+Feel free to customize the script based on your specific needs. Adjust frame length, frame shift, and other parameters as necessary.
+
+### [Praat]
 ## LineBot interface
+This Python script utilizes the Parselmouth library to extract various acoustic features from a collection of WAV files in the 'patient_wav' directory. The extracted features include intensity, pitch, harmonics-to-noise ratio (HNR), glottal-to-noise ratio (GNE), local jitter, local shimmer, spectrum attributes, and formant attributes.
+
+## Usage
+1. Place your WAV files in the 'patient_wav' directory.
+2. Run the script to extract acoustic features from each WAV file.
+3. CSV files containing the extracted features will be generated for each corresponding WAV file.
+
+## Installation
+```bash
+pip install pandas parselmouth
+```
+## Output
+CSV files with extracted acoustic features will be created for each WAV file in the 'patient_wav' directory.
+
+
+Feel free to customize the script based on your specific needs and modify the 'directory' variable if your WAV files are located elsewhere.
 
 ## Introduction  
 
