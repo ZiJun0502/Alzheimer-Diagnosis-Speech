@@ -39,4 +39,7 @@ We measure denoise method with Signal-to-noise ratio(SNR), the formula is as fal
 
 ![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/ce801071-5a52-4540-89e5-7de955a2d037)
 
+The final result will be as graph:
+
+![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/2f1010af-3e04-4a62-a600-fc813a7b7fd4)
 
