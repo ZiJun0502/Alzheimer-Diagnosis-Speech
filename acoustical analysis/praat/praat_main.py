@@ -2,7 +2,6 @@ import pandas as pd
 import parselmouth
 import csv
 import os
-
 from praat_feature import *  
 
 directory = 'patient_wav'
