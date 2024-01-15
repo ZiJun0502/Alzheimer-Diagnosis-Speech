@@ -15,12 +15,12 @@ This Python script processes a collection of WAV files in the 'wav' directory to
 5. Discrete Cosine Transform (DCT)
 6. Extract MFCCs
 
-### Usage
+#### Usage
 1. Place your WAV files in the 'wav' directory.
 2. Run the script to extract MFCC features from each WAV file.
 3. CSV files with extracted MFCC features will be generated for each corresponding WAV file.
 
-### Installation
+#### Installation
 ```bash
 pip install numpy scipy
 ```
@@ -29,16 +29,16 @@ Feel free to customize the script based on your specific needs. Adjust frame len
 ### Praat
 This Python script utilizes the Parselmouth library to extract various acoustic features from a collection of WAV files in the 'patient_wav' directory. The extracted features include intensity, pitch, harmonics-to-noise ratio (HNR), glottal-to-noise ratio (GNE), local jitter, local shimmer, spectrum attributes, and formant attributes.
 
-### Usage
+#### Usage
 1. Place your WAV files in the 'patient_wav' directory.
 2. Run the script to extract acoustic features from each WAV file.
 3. CSV files containing the extracted features will be generated for each corresponding WAV file.
 
-### Installation
+#### Installation
 ```bash
 pip install pandas parselmouth
 ```
-### Output
+#### Output
 CSV files with extracted acoustic features will be created for each WAV file in the 'patient_wav' directory.
 
 Feel free to customize the script based on your specific needs and modify the 'directory' variable if your WAV files are located elsewhere.
