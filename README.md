@@ -27,7 +27,6 @@ pip install numpy scipy
 Feel free to customize the script based on your specific needs. Adjust frame length, frame shift, and other parameters as necessary.
 
 ### [Praat]
-## LineBot interface
 This Python script utilizes the Parselmouth library to extract various acoustic features from a collection of WAV files in the 'patient_wav' directory. The extracted features include intensity, pitch, harmonics-to-noise ratio (HNR), glottal-to-noise ratio (GNE), local jitter, local shimmer, spectrum attributes, and formant attributes.
 
 ## Usage
@@ -42,9 +41,9 @@ pip install pandas parselmouth
 ## Output
 CSV files with extracted acoustic features will be created for each WAV file in the 'patient_wav' directory.
 
-
 Feel free to customize the script based on your specific needs and modify the 'directory' variable if your WAV files are located elsewhere.
 
+## LineBot interface
 ## Introduction  
 
 This Brench is created for linebot implementation  
