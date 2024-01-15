@@ -1,7 +1,6 @@
 ## Denoise: preprocess through the accoustic features
-we take f03.wav patient audio as example, and implementing different denoise method on the audio, because we can't assure which method is better on in MFCC, pratt extract features, so we choose NR library in general.
-
-We measure denoise method with Signal-to-noise ratio(SNR), the formula is as fallow:
+We take f03.wav patient audio as an example and implement different denoise methods on the audio. Because we can't assure which method is better in MFCC, Pratt extracts features, so we choose the NR library in general.
+We measure the noise using the signal-to-noise ratio (SNR), and the formula is as follows:
 
 <img width="178" alt="image" src="https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/4cf061ee-b60b-44ad-8f70-3da7f82a2693">
 
