@@ -32,7 +32,7 @@ Stanza Library is the optimal version of Stanford NLP; it can simply use pip to 
 POS, aka part of a sentence, has the following tags: ADJ (adjective), ADP (adposition), ADV (adverb), AUX (auxilary), CONJ (conjunction), DET (determiner), INTJ (interjection), NOUN (noun), NUM (numerical), PART (particle), PRON (pronoun), PROPN (propernoun), PUNCT (punctuation), SCONJ (subordinating conjuction), SYM (symbol), VERB (verb), X (other), SPACE (space), we only exclude the SYM (symbol) tag from the Spacy POS tagging set. The POS tagging set is based on the Penn treebank developed by Penn University. Compared to the POS tagging set in Stanford NLP, there are slight differences, but we think the Spacy POS tagging set is good enough for analysis. The research has shown that there is some relationship between the ratios in the POS tagging set.
 We have chosen the specific POS tagging set, which is content words and function words. Content words usually include verbs, nouns, adjectives, and adverbs. Function words usually include auxiliary verbs, prepositions, conjunctions, and pronouns. We can predict that AD patients will reduce the frequency of content words and increase the frequency of function words. 
 
-### Syntactic complexity
+### Basic Syntactic complexity
 
 Including the counting numbers of lemma, chunks, person singular verbs, clauses, and t-units.
 We can use Spacy to tokenize and return the original lemma of the words, as well as count the most frequently used words.
@@ -94,7 +94,7 @@ Steve Jobs True
 Apple False
 ```
 
-### Specific terms
+### Name entity recognized
 
 When we examine the text, we can see some proper nouns that will occur in the text. In the Spacy library, there is a NER (name entity recognized) function to analyze different categories of proper nouns, so we tag out the NER (name entity recognized) in the text and specifically highlight out the time NER in the text because AD patients can hardly remember the time priority of the events that occur.
 
@@ -106,7 +106,7 @@ When we listen to the patient's audio, we can observe that the patient won't hav
 
 Then, we will ask whether the words AD patients use are familiar to them in their daily lives. So, we use SUBTL frequency norms, which collect the daily term in drama and video clips. We can average each word in the text to get the degree of familiarity easily.
 
-### Syntactic complexity
+### Advanced Syntactic complexity
 
 Including Yngve Depth, left-branching depth, Frazer Depth, and Syntactic Dependency Length (SDL) scores, three-part advanced analysis using a parser tree developed by Stanford NLP.
 Yngve Depth is named after American linguist Kenneth Yngve. We need to use a parser tree to identify embedded structures, define the depth of each embedded structure, and sum all of the depths up. And the left-branching tree is the theory based on Yngve depth; we can also calculate it with a parser tree.
