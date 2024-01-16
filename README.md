@@ -49,8 +49,22 @@ CSV files with extracted acoustic features will be created for each WAV file in 
 
 Feel free to customize the script based on your specific needs and modify the 'directory' variable if your WAV files are located elsewhere.
 
+## ASR transformation
+Before we start the lexical analysis of the AD diagnosis, we should use the ASR to transform the audio datasets into text files so we can use NLP to analyze the lexical features. The ASR model we use is Whisper, developed by OpenAI. We can use the following code to transform the audio data:
+```bush
+!pip install whisper
+!pip install git+https://github.com/openai/whisper.git
+```
 ## Lexical Analysis
-If you want to run Stanford coreNLP on Colab, you need to implement the following code:
+After receiving the text file from ASR processing, you can extract the lexical analysis function by function using the following engines:
+1. Stanford CoreNLP (using the parser tree package from the server):
+
+Start the local server by keying following code in your CMD:
+```bush
+$cd "C:\stanford-corenlp-4.5.5\stanford-corenlp-4.5.5"
+$java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 15000 -annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref
+```
+If you want to run Stanford coreNLP server on Colab, you need to implement the following code:
 ```bush
 # Install stanza; note that the prefix "!" is not needed if you are running in a terminal
 !pip install stanza
@@ -91,6 +105,8 @@ client.stop()
 time.sleep(10)
 !ps -o pid,cmd | grep java
 ```
+2.Stanza: 
+
 If you want to use the optimal version of StanfordNLP -- stanza
 ```bush
 !pip install stanza
@@ -98,6 +114,8 @@ stanza.download('en')
 # Loading pipline from stanza 
 nlp = stanza.Pipeline('en', processors='tokenize,mwt,pos,lemma,depparse')
 ```
+3.NLTK:
+
 If you want to use NLTK:
 ```bush
 !pip install nltk
@@ -105,6 +123,8 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
 ```
+4.SpaCy:
+
 If you want to use SpaCy:
 ```bush
 !pip install spacy
@@ -142,56 +162,56 @@ We can use these engines to extract following features:
 
 9.Silence splitting
 
-# Prediction Model Using MFCC and NLP Features
+## Prediction Model Using MFCC and NLP Features
 
-## Overview
+### Overview
 This comprehensive guide covers three Alzheimer's Disease (AD) prediction models, focusing on machine learning techniques, MFCC data extraction, and a combination of MFCC and NLP features. These models aim to predict AD using various classifiers and data sources, including patient and normal datasets.
 
-## Requirements
+### Requirements
 - Python 3.x
 - Libraries: pandas, numpy, sklearn, matplotlib, csv
 - Google Colab for drive mounting and processing
 
-## Installation
+### Installation
 1. Install Python 3 and required libraries using pip.
 2. Use Google Colab for executing scripts and accessing Google Drive.
 
-## Usage
-### Common Steps for All Models
+### Usage
+#### Common Steps for All Models
 - **Connect to Google Drive**: Use Google Colab to mount your Google Drive for data access.
 - **Import Required Packages**: Import Python packages like pandas, numpy, sklearn, os, etc.
 
-### Model-Specific Steps
-#### 1. Machine Learning Model for AD Prediction
+#### Model-Specific Steps
+##### 1. Machine Learning Model for AD Prediction
 - **Data Preparation**: Load the dataset from Google Drive and split it into training and test sets.
 - **Feature Selection using Lasso**: Perform feature selection using Lasso regression.
 - **Model Training and Evaluation**: Train models like KNN, SVM, Decision Tree, etc., and evaluate using metrics like accuracy, MCC, and F1-score.
 - **Results Visualization**: Visualize model performance.
 
-#### 2. MFCC Data Extraction Model
+##### 2. MFCC Data Extraction Model
 - **Data Processing**: Initialize a data processing class for extracting MFCC features.
 - **MFCC Feature Extraction**: Process patient datasets to extract MFCC features such as mean, standard deviation, etc.
 
-#### 3. Combined MFCC and NLP Features Model
+##### 3. Combined MFCC and NLP Features Model
 - **Data Preparation**: Load the dataset from Google Drive and split it into training and test sets.
 - **Merge MFCC and Text Data**: Combine MFCC data with NLP textual data and assign AD diagnosis labels.
 - **Normalize the Final Dataset**: Merge datasets and normalize by dropping non-normalized features.
 
-### Final Dataset Creation and Saving
+#### Final Dataset Creation and Saving
 - **Create DataFrames and Merge Data**: For all models, create separate DataFrames for different features and merge them.
 - **Save Processed Data to CSV**: Export the processed data to CSV files for further analysis.
 
-## Data
+### Data
 - Ensure data files like patient datasets, MFCC feature files, and NLP textual data files are correctly placed in Google Drive.
 - Follow specific file paths mentioned in the models' scripts.
 
-## Note
+### Note
 - These models are developed for educational and research purposes.
 - The performance of the models can vary based on dataset quality and size.
 
 
-## LineBot interface
-### Introduction  
+### LineBot interface
+#### Introduction  
 
 This Brench is created for linebot implementation  
 Mainly in file "Linebot", Which includes:  
@@ -200,18 +220,18 @@ _2. Data preprocess maintained as a class_
 _3. Model training process maintained as a class_  
 _4. Side materials for testing_
 
-###  Build Setup  
+####  Build Setup  
 
 _1. Replit_  
 _2. Google Run_  
 
-### .env Setting  
+#### .env Setting  
 
 _1. OpenAI token_  
 _2. LineBot LINE_CHANNEL_ACCESS_TOKEN_ 
 _3. LineBot LINE_CHANNEL_SECRET_  
 
-### User Manual  
+#### User Manual  
 _1. Adding AD diagnoser as your friend_  
 _2. Sending an audio message of a 30sec~1min speech to AD diagnoser(could  be either a description of a picture, or any monologue in English_  
 _3. Waiting for response_
@@ -219,7 +239,7 @@ _3. Waiting for response_
 ![image](https://i.imgur.com/Br1cRps.png)
 ![image](https://i.imgur.com/M08Eg7T.png)
 ![image](https://i.imgur.com/C5Onfz2.png)
-### Demo video
+#### Demo video
 https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/104049394/0abc9976-7245-4fc7-9743-a16e3f877b35
 
 
