@@ -1,5 +1,5 @@
 # Alzheimer-Diagnosis-Speech
-## Data resource
+## Data Resource
 ### [DementiaBank](https://dementia.talkbank.org/access/)
 We use the dataset used in the competition and the tags on it to classify the MCI and AD classes in all of the patients.
 ### [TED-LIUM release1](https://huggingface.co/datasets/LIUM/tedlium)
