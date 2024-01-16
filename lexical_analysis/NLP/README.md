@@ -77,9 +77,9 @@ In implementation, we can use tokenize function supported by Spacy library simpl
 ### Negation analysis
 The negation detection is an important analysis in NLP segment. There are some different implement, there is negation tag in Spacy tagging set, but we have seen that it can only tagging out the not but bot the nagation meaning words. So, we seek for the negation detection library called NegSpaCy, it is originlally used in the diagnosis of the hospital, it can tag out the negation objective of the text. 
 
-![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/9ca1e355-8083-4356-9702-ca22a5bbc68d)
+![icon](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/4fefcf06-13fd-4414-8563-e576d03e538d)
 
-![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/67888a71-e254-40da-87f1-6a2c0a49459d)
+![1_kWJa0M0JI4oVhVgP7wnNTQ](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/00e962d7-a486-4e81-aac0-8b6352e58c14)
 
 The demo result will be as below: 
 
@@ -122,11 +122,11 @@ We are finally using the basic implements in syntactic complexity, dependency tr
 
 Repeatness is an important issue in AD patient diagnosis as well. In the first place, we don't find a good way to extract this feature because the differences between the sentences can't be measured by the words or the lemma. However, we have discovered the Bag-of-Words Model (BoW) module and recognized its similarity to different words.
 
-![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/49cd9384-f554-4e2d-9917-000441c86ce3)
+![20140744GORvWkZG8N](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/3745a8f5-58b9-427d-beb4-6a2b55878d20)
 
 We can give a brief description in a bag of words. We uses Sk-Learn and NLTK to do the document vectorization, calculating the cosine distance between each sentence and forming the difference matrix. We will set a threshold; if the distance is below the threshold, we'll assume the two sentences are the same. So, we can calculate the proportion of repeatness in the text.
 
-![image](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/258c915f-7543-4375-9885-68b07d2d7f40)
+![0_B3rOPw4OVDRSqpU8](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/cabb2383-fa64-4bbc-b2e2-71549afe2ab1)
 
 ### Silence splitting
 
