@@ -85,7 +85,7 @@ import time; time.sleep(10)
 # You should be able to see a StanfordCoreNLPServer java process running in the background
 !ps -o pid,cmd | grep java
 ```
-End the server with he following code:
+End the server with the following code:
 ```bush
 client.stop()
 time.sleep(10)
