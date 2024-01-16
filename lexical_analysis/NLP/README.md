@@ -126,7 +126,7 @@ Repeatness is an important issue in AD patient diagnosis as well. In the first p
 
 We can give a brief description in a bag of words. We uses Sk-Learn and NLTK to do the document vectorization, calculating the cosine distance between each sentence and forming the difference matrix. We will set a threshold; if the distance is below the threshold, we'll assume the two sentences are the same. So, we can calculate the proportion of repeatness in the text.
 
-![0_B3rOPw4OVDRSqpU8](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/cabb2383-fa64-4bbc-b2e2-71549afe2ab1)
+![0_B3rOPw4OVDRSqpU8](https://github.com/ZiJun0502/Alzheimer-Diagnosis-Speech/assets/106430645/40e9c809-83cf-4067-9e5e-034298edbb2d)
 
 ### Silence splitting
 
