@@ -57,7 +57,7 @@ Before we start the lexical analysis of the AD diagnosis, we should use the ASR 
 ```
 ## Lexical Analysis
 After receiving the text file from ASR processing, you can extract the lexical analysis function by function using the following engines:
-1. Stanford CoreNLP (using the parser tree package from the server):
+### 1. Stanford CoreNLP (using the parser tree package from the server):
 
 Start the local server by keying following code in your CMD:
 ```bush
@@ -105,7 +105,7 @@ client.stop()
 time.sleep(10)
 !ps -o pid,cmd | grep java
 ```
-2.Stanza: 
+### 2.Stanza: 
 
 If you want to use the optimal version of StanfordNLP -- stanza
 ```bush
@@ -114,7 +114,7 @@ stanza.download('en')
 # Loading pipline from stanza 
 nlp = stanza.Pipeline('en', processors='tokenize,mwt,pos,lemma,depparse')
 ```
-3.NLTK:
+### 3.NLTK:
 
 If you want to use NLTK:
 ```bush
@@ -123,7 +123,7 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
 ```
-4.SpaCy:
+### 4.SpaCy:
 
 If you want to use SpaCy:
 ```bush
