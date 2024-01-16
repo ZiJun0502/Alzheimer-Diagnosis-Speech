@@ -49,7 +49,7 @@ CSV files with extracted acoustic features will be created for each WAV file in 
 
 Feel free to customize the script based on your specific needs and modify the 'directory' variable if your WAV files are located elsewhere.
 
-# Alzheimer's Disease Prediction Model Using MFCC and NLP Features
+# Prediction Model Using MFCC and NLP Features
 
 ## Overview
 This comprehensive guide covers three Alzheimer's Disease (AD) prediction models, focusing on machine learning techniques, MFCC data extraction, and a combination of MFCC and NLP features. These models aim to predict AD using various classifiers and data sources, including patient and normal datasets.
