@@ -123,14 +123,23 @@ from pydub import AudioSegment
 from pydub.silence import split_on_silence
 ```
 We can use these engines to extract following features:
+
 1.POS tagging
+
 2.Syntactic complexity(Including basic and advanced part)
+
 3.Vocabulary richness
+
 4.Negation analysis
+
 5.Name entity recognized
+
 6.Emoji analysis
+
 7.Psycholinguistics
+
 8.Repetitiveness
+
 9.Silence splitting
 
 # Prediction Model Using MFCC and NLP Features
