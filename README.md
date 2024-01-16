@@ -4,6 +4,12 @@
 We use the dataset used in the competition and the tags on it to classify the MCI and AD classes in all of the patients.
 ### [TED-LIUM release1](https://huggingface.co/datasets/LIUM/tedlium)
 We use the dataset composed of Ted Talks in 2012. The reason we chose it is because of the fluency of the speaker's speech and the length of the speech, which is suitable for the patient dataset.
+## Denoise Implementation
+```bush
+!pip install pydub
+!pip install noisereduce
+```
+We can simply transform the signal file (.wav file) into an AudioSegment object using pydub. Then, we can use the well-tuned noise reduction library NoiseReduce to implement a noise reduction function on the audio. It's crucial for preprocessing in acoustic feature extraction. The more noise-reduction implementations are developed, the more they will be stored in the NR folder.
 
 ## Acoustical Analysis
 ### MFCC
